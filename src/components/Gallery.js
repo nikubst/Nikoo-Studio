@@ -12,7 +12,7 @@ const sampleArtworks = [
     type: 'image',
     url: 'https://picsum.photos/id/1003/800/1000',
     category: 'artistic',
-    description: 'A beautiful photograph of mountain landscape',
+    description: 'A stunning high-altitude landscape showcasing the majestic beauty of snow-capped mountain peaks at sunrise. The play of light and shadow across the rugged terrain creates a dramatic and serene atmosphere, perfect for nature enthusiasts and art lovers alike. The composition highlights the raw power and tranquility of untouched wilderness.',
     thumbnail: 'https://picsum.photos/id/1003/400/500'
   },
   {
@@ -23,7 +23,7 @@ const sampleArtworks = [
     type: 'image',
     url: 'https://picsum.photos/id/1011/800/1000',
     category: 'artistic',
-    description: 'A portrait capturing deep human emotions',
+    description: 'An intimate black and white portrait that captures the depth of human emotion through subtle expressions and masterful lighting. The subject\'s gaze tells a story of resilience and contemplation, while the high-contrast treatment emphasizes the play of light and shadow across their features, creating a timeless quality.',
     thumbnail: 'https://picsum.photos/id/1011/400/500'
   },
   {
@@ -34,7 +34,7 @@ const sampleArtworks = [
     type: 'image',
     url: 'https://picsum.photos/id/1020/800/1000',
     category: 'graphic',
-    description: 'Modern and abstract graphic design',
+    description: 'A contemporary abstract composition that explores the relationship between geometric shapes and negative space. The design features a harmonious blend of modern aesthetics and conceptual depth, using a carefully curated color palette to create visual interest and movement. This piece demonstrates how simplicity in form can convey complex ideas and emotions.',
     thumbnail: 'https://picsum.photos/id/1020/400/500'
   },
   
@@ -42,61 +42,61 @@ const sampleArtworks = [
   {
     id: 4,
     title: 'Nature Video',
-    artist: 'Sample Video',
+    artist: 'Nature Documentary Team',
     year: '2023',
     type: 'video',
     url: 'https://www.w3schools.com/html/mov_bbb.mp4',
     thumbnail: 'https://www.w3schools.com/html/img_girl.jpg',
     category: 'animated',
-    description: 'Sample video demonstration'
+    description: 'A captivating nature documentary clip showcasing the serene beauty of wildlife in their natural habitat. This high-definition footage captures the delicate balance of ecosystems, featuring stunning visuals of diverse flora and fauna. The video demonstrates professional cinematography techniques with smooth tracking shots and close-ups that reveal the intricate details of nature\'s wonders.'
   },
   
   // More Images
   {
-    id: 6,
-    title: 'City Life',
+    id: 5,
+    title: 'Urban Pulse',
     artist: 'Urban Photographer',
     year: '2023',
     type: 'image',
     url: 'https://picsum.photos/id/1050/800/1000',
     category: 'artistic',
-    description: 'Urban photography series',
+    description: 'A dynamic urban landscape that captures the vibrant energy of city life. The photograph frames architectural elements against the backdrop of a bustling metropolis, where the interplay of natural and artificial light creates a dramatic atmosphere. The composition highlights the contrast between the permanence of structures and the transient nature of urban existence.',
     thumbnail: 'https://picsum.photos/id/1050/400/500'
   },
   {
-    id: 7,
+    id: 6,
     title: 'Brand Identity',
     artist: 'Logo Designer',
     year: '2023',
     type: 'image',
     url: 'https://picsum.photos/id/1069/800/1000',
     category: 'graphic',
-    description: 'Corporate identity design',
+    description: 'A comprehensive brand identity system that demonstrates the power of visual consistency across various applications. This design showcases how typography, color theory, and graphic elements work in harmony to create a memorable brand presence. The clean, modern aesthetic ensures versatility while maintaining strong brand recognition across different media platforms.',
     thumbnail: 'https://picsum.photos/id/1069/400/500'
   },
   
   
   // Final Images
   {
-    id: 9,
-    title: 'Wildlife',
+    id: 7,
+    title: 'Wildlife Encounter',
     artist: 'Wildlife Photographer',
     year: '2023',
     type: 'image',
     url: 'https://picsum.photos/id/1074/800/1000',
     category: 'artistic',
-    description: 'Wildlife photography',
+    description: 'An extraordinary wildlife moment frozen in time, capturing the raw beauty and untamed spirit of nature. The photograph showcases the intricate details of the animal\'s features, from the texture of its fur to the intensity in its eyes. The natural lighting and composition create a sense of intimacy, allowing viewers to connect with the subject on a profound level.',
     thumbnail: 'https://picsum.photos/id/1074/400/500'
   },
   {
-    id: 10,
+    id: 8,
     title: 'Minimalist Design',
     artist: 'UI/UX Designer',
     year: '2023',
     type: 'image',
     url: 'https://picsum.photos/id/1084/800/1000',
     category: 'graphic',
-    description: 'Clean and minimal design',
+    description: 'A masterclass in minimalism, this design demonstrates how less can indeed be more. The composition uses negative space as a powerful design element, allowing the carefully selected typography and subtle graphic elements to breathe. The restrained color palette and clean lines create a sense of sophistication and clarity, making it an excellent example of modern design principles.',
     thumbnail: 'https://picsum.photos/id/1084/400/500'
   }
 ];
