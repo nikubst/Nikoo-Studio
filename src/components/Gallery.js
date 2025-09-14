@@ -38,28 +38,17 @@ const sampleArtworks = [
     thumbnail: 'https://picsum.photos/id/1020/400/500'
   },
   
-  // Videos
+  // Video Sample
   {
     id: 4,
-    title: 'Tom and Jerry',
-    artist: 'Classic Cartoon',
+    title: 'Nature Video',
+    artist: 'Sample Video',
     year: '2023',
     type: 'video',
     url: 'https://www.w3schools.com/html/mov_bbb.mp4',
-    thumbnail: 'https://i.ytimg.com/vi/t0Q2otsqC4I/maxresdefault.jpg',
+    thumbnail: 'https://www.w3schools.com/html/img_girl.jpg',
     category: 'animated',
-    description: 'Classic Tom and Jerry cartoon episode'
-  },
-  {
-    id: 5,
-    title: 'Mickey Mouse',
-    artist: 'Disney',
-    year: '2023',
-    type: 'video',
-    url: 'https://www.w3schools.com/html/mov_bbb.mp4',
-    thumbnail: 'https://i.ytimg.com/vi/7KX5aF-QpeM/maxresdefault.jpg',
-    category: 'animated',
-    description: 'Mickey Mouse and friends adventure'
+    description: 'Sample video demonstration'
   },
   
   // More Images
@@ -86,18 +75,6 @@ const sampleArtworks = [
     thumbnail: 'https://picsum.photos/id/1069/400/500'
   },
   
-  // More Videos
-  {
-    id: 8,
-    title: 'Scooby-Doo',
-    artist: 'Hanna-Barbera',
-    year: '2023',
-    type: 'video',
-    url: 'https://www.w3schools.com/html/mov_bbb.mp4',
-    thumbnail: 'https://i.ytimg.com/vi/eZ2RqQyQfrY/maxresdefault.jpg',
-    category: 'animated',
-    description: 'Mystery solving with Scooby and the gang'
-  },
   
   // Final Images
   {
