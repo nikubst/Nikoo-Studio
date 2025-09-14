@@ -38,17 +38,17 @@ const sampleArtworks = [
     thumbnail: 'https://picsum.photos/id/1020/400/500'
   },
   
-  // Video Sample
+  // Video Sample - YouTube Nature Documentary
   {
     id: 4,
-    title: 'Nature Video',
-    artist: 'Nature Documentary Team',
+    title: '4K Nature Documentary',
+    artist: 'Nature Relaxation Films',
     year: '2023',
     type: 'video',
-    url: 'https://www.w3schools.com/html/mov_bbb.mp4',
-    thumbnail: 'https://www.w3schools.com/html/img_girl.jpg',
+    url: 'https://www.youtube.com/embed/1La4QzGeaaQ',
+    thumbnail: 'https://img.youtube.com/vi/1La4QzGeaaQ/maxresdefault.jpg',
     category: 'animated',
-    description: 'A captivating nature documentary clip showcasing the serene beauty of wildlife in their natural habitat. This high-definition footage captures the delicate balance of ecosystems, featuring stunning visuals of diverse flora and fauna. The video demonstrates professional cinematography techniques with smooth tracking shots and close-ups that reveal the intricate details of nature\'s wonders.'
+    description: 'Immerse yourself in stunning 4K footage of Earth\'s most beautiful natural landscapes. This high-quality documentary showcases breathtaking views of mountains, forests, and rivers, captured with professional cinematography. The video highlights the importance of nature conservation while providing a peaceful and visually stunning experience.'
   },
   
   // More Images
@@ -195,6 +195,10 @@ const Gallery = () => {
     }
   };
 
+  const isYouTubeUrl = (url) => {
+    return url.includes('youtube.com') || url.includes('youtu.be');
+  };
+
   const openLightbox = (artwork) => {
     console.log('Opening lightbox for:', artwork.title);
     setSelectedArtwork(artwork);
@@ -202,7 +206,7 @@ const Gallery = () => {
     setVideoError(null);
     if (artwork.type === 'video') {
       console.log('Video detected, setting loading state');
-      setIsVideoLoading(true);
+      setIsVideoLoading(!isYouTubeUrl(artwork.url)); // Don't show loading for YouTube
     }
     document.body.style.overflow = 'hidden';
     setDownloadMessage('');
@@ -418,33 +422,47 @@ const Gallery = () => {
                           </button>
                         </div>
                       ) : (
-                        <video 
-                          key={selectedArtwork.id}
-                          controls
-                          autoPlay
-                          playsInline
-                          muted
-                          loop
-                          preload="auto"
-                          onClick={(e) => e.stopPropagation()}
-                          onError={(e) => {
-                            console.error('Video playback error:', e);
-                            setVideoError('خطا در پخش ویدیو. لطفاً اتصال اینترنت خود را بررسی کنید.');
-                            setIsVideoLoading(false);
-                          }}
-                          onCanPlay={() => setIsVideoLoading(false)}
-                        >
-                          <source 
-                            src={selectedArtwork.url} 
-                            type="video/mp4"
+                        isYouTubeUrl(selectedArtwork.url) ? (
+                          <div className="youtube-container">
+                            <iframe
+                              width="100%"
+                              height="100%"
+                              src={`${selectedArtwork.url}?autoplay=1&mute=1&rel=0&showinfo=0`}
+                              frameBorder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                              title={selectedArtwork.title}
+                            />
+                          </div>
+                        ) : (
+                          <video 
+                            key={selectedArtwork.id}
+                            controls
+                            autoPlay
+                            playsInline
+                            muted
+                            loop
+                            preload="auto"
+                            onClick={(e) => e.stopPropagation()}
                             onError={(e) => {
-                              console.error('Error loading video source:', e);
-                              setVideoError('خطا در بارگذاری ویدیو');
+                              console.error('Video playback error:', e);
+                              setVideoError('خطا در پخش ویدیو. لطفاً اتصال اینترنت خود را بررسی کنید.');
                               setIsVideoLoading(false);
                             }}
-                          />
-                          مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-                        </video>
+                            onCanPlay={() => setIsVideoLoading(false)}
+                          >
+                            <source 
+                              src={selectedArtwork.url} 
+                              type="video/mp4"
+                              onError={(e) => {
+                                console.error('Error loading video source:', e);
+                                setVideoError('خطا در بارگذاری ویدیو');
+                                setIsVideoLoading(false);
+                              }}
+                            />
+                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                          </video>
+                        )
                       )}
                     </div>
                   ) : (
