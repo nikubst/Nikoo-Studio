@@ -199,23 +199,30 @@ const Gallery = () => {
     return url.includes('youtube.com') || url.includes('youtu.be');
   };
 
+  useEffect(() => {
+    // Cleanup function to ensure scroll is restored when component unmounts
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
   const openLightbox = (artwork) => {
     console.log('Opening lightbox for:', artwork.title);
+    document.body.style.overflow = 'hidden';
     setSelectedArtwork(artwork);
     setIsZoomed(false);
     setVideoError(null);
     if (artwork.type === 'video') {
       console.log('Video detected, setting loading state');
-      setIsVideoLoading(!isYouTubeUrl(artwork.url)); // Don't show loading for YouTube
+      setIsVideoLoading(!isYouTubeUrl(artwork.url));
     }
-    document.body.style.overflow = 'hidden';
     setDownloadMessage('');
   };
 
   const closeLightbox = () => {
+    document.body.style.overflow = 'auto';
     setSelectedArtwork(null);
     setIsZoomed(false);
-    document.body.style.overflow = 'auto';
   };
 
   const navigateArtwork = (direction) => {
